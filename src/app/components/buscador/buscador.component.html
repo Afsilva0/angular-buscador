@@ -1,0 +1,17 @@
+<p>xd</p>
+<form [formGroup]="form">
+  <mat-form-field>
+    <mat-select formControlName="banco" placeholder="Bank" #singleSelect>
+      <mat-option>
+        <ngx-mat-select-search
+          formControlName="buscador"
+        ></ngx-mat-select-search>
+      </mat-option>
+      <mat-option *ngFor="let bank of banks" [value]="bank.id">
+        {{ bank.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button (click)="siguiente()">Enviar</button>
+</form>
